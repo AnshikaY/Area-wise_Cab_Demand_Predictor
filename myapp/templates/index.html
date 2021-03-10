@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Area-wise cab demand predictor</title>
+    <style>
+        body{
+          background-image: url("https://cherrytaxiservice.com/wp-content/uploads/2017/07/Taxi.jpg");
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          font-family: "open-sans", sans-serif;
+          margin: 0;
+          padding: 0;
+          color: #fff;
+        }
+        input[type=submit]{
+          transition-duration: 0.4s;
+          border-radius: 10px;
+          font-size: 18px;
+          width: 125px;
+          height: 45px;
+        }
+        input[type=submit]:hover{
+          background-color: #4CAF50;
+          color: white;
+        }
+    </style>
+</head>
+<body align="center">
+<h1><u>AREA-WISE CAB DEMAND PREDICTOR</u></h1>
+    <hr/><br/>
+    <form action="{% url 'test' %}" method="post">
+        {% csrf_token %}
+        <b>Enter Price Per Week:</b>
+        <input type="number" name="ppw" placeholder="Enter Price Per Week"/><br/><br/>
+        <b>Enter Population:</b>
+        <input type="number" name="pn" placeholder="Enter Population"/><br/><br/>
+        <b>Enter Monthly Income:</b>
+        <input type="number" name="mi" placeholder="Enter Monthly Income"/><br/><br/>
+        <b>Enter Average Parking Per Month:</b>
+        <input type="number" name="appm" placeholder="Enter Average Parking Per Month"/><br/><br/>
+        <input type="submit" value="PREDICT"/>
+        <br/><br/>
+        <!--{% if res %}-->
+            <!--<h2>Number of rides: {{res}}</h2>-->
+        <!--{% endif %}-->
+        <hr/>
+        <table border="1" align="center" style="background-color:#4CAF50;">
+            <tr>
+                <th><b>Price Per Week</b></th>
+                <th><b>Population</b></th>
+                <th><b>Monthly Income</b></th>
+                <th><b>Average Parking Per Month</b></th>
+                <th><b>No. of rides</b></th>
+            </tr>
+            {% for r in res %}
+            <tr>
+                <td>{{r.ppw}}</td>
+                <td>{{r.pn}}</td>
+                <td>{{r.mi}}</td>
+                <td>{{r.appm}}</td>
+                <td>{{r.result}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </form>
+</body>
+</html>
