@@ -33,13 +33,13 @@
     <form action="{% url 'test' %}" method="post">
         {% csrf_token %}
         <b>Enter Price Per Week:</b>
-        <input type="number" name="ppw" placeholder="Enter Price Per Week"/><br/><br/>
+        <input type="number" name="ppw" placeholder="Enter Price Per Week" required/><br/><br/>
         <b>Enter Population:</b>
-        <input type="number" name="pn" placeholder="Enter Population"/><br/><br/>
+        <input type="number" name="pn" placeholder="Enter Population" required/><br/><br/>
         <b>Enter Monthly Income:</b>
-        <input type="number" name="mi" placeholder="Enter Monthly Income"/><br/><br/>
+        <input type="number" name="mi" placeholder="Enter Monthly Income" required/><br/><br/>
         <b>Enter Average Parking Per Month:</b>
-        <input type="number" name="appm" placeholder="Enter Average Parking Per Month"/><br/><br/>
+        <input type="number" name="appm" placeholder="Enter Average Parking Per Month" required/><br/><br/>
         <input type="submit" value="PREDICT"/>
         <br/><br/>
         <!--{% if res %}-->
