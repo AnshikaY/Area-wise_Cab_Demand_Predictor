@@ -24,8 +24,9 @@ SECRET_KEY = '_ws_bxik1xnv94zrzh#8@x0-sj%eqp1ln@(zrzbd6pjisqmsm0'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-# ALLOWED_HOSTS = [ ] uncomment to run on localhost
-ALLOWED_HOSTS = ["cab-demand-predictor.herokuapp.com", ]
+
+ALLOWED_HOSTS = [ ]
+# ALLOWED_HOSTS = ["cab-demand-predictor.herokuapp.com", ]
 
 
 # Application definition
