@@ -8,6 +8,7 @@ from . models import Prediction
 def index(request):
     res = Prediction.objects.all()
     return render(request,"index.html",{'res':res})
+
 def test(request):
     ppw = int(request.POST['ppw'])
     pn = int(request.POST['pn'])
